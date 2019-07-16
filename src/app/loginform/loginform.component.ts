@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 
 
 @Component({
@@ -11,10 +13,10 @@ export class LoginformComponent implements OnInit {
 
 	loginForm:FormGroup;
 
-	constructor(fb: FormBuilder) {
+	constructor(fb: FormBuilder, private myRoute:Router, private auth:AuthService) {
 		this.loginForm=fb.group({
-			login:"",
-			password:""
+			login:fb.control("",Validators.required),
+			password:fb.control("",Validators.required)
 		});
 
 
@@ -25,6 +27,14 @@ export class LoginformComponent implements OnInit {
 
 
 	ngOnInit() {
+
+	}
+
+	login(){
+		if(this.loginForm.valid){
+			this.auth.sendToken(this.loginForm.value.password)
+			this.myRoute.navigate(["home"]);
+		}
 	}
 
 }

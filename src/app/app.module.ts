@@ -10,7 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { LoginformComponent } from './loginform/loginform.component';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { ConfigurationComponent } from './configuration/configuration.component';
 
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     AboutComponent,
     LoginformComponent,
+    ConfigurationComponent,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(ROUTES), ReactiveFormsModule
