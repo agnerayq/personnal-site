@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -14,6 +15,7 @@ import {ROUTES} from './app.routes';
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(ROUTES)
