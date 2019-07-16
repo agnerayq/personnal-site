@@ -7,8 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
 import { AboutComponent } from './about/about.component';
+import { LoginformComponent } from './loginform/loginform.component';
 
-
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,9 +17,10 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
+    LoginformComponent,
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(ROUTES)
+    BrowserModule, RouterModule.forRoot(ROUTES), ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
