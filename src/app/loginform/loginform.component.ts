@@ -13,7 +13,7 @@ export class LoginformComponent implements OnInit {
 
 	loginForm:FormGroup;
 
-	constructor(fb: FormBuilder, private myRoute:Router, private auth:AuthService) {
+	constructor(fb: FormBuilder) {
 		this.loginForm=fb.group({
 			login:fb.control("",Validators.required),
 			password:fb.control("",Validators.required)
@@ -30,11 +30,5 @@ export class LoginformComponent implements OnInit {
 
 	}
 
-	login(){
-		if(this.loginForm.valid){
-			this.auth.sendToken(this.loginForm.value.password)
-			this.myRoute.navigate(["home"]);
-		}
-	}
 
 }
