@@ -1,0 +1,22 @@
+/* bar header */
+.navbar-default{
+	background-color: #000000;
+}
+
+/* lien bar header*/
+.navbar-default .navbar-header > a {
+	color: #CDD2D4 !important;
+	font-size: 18px;
+	
+}
+/* lien bar header Quentin Agneray => HOME */
+.navbar-default .navbar-header #home > a  {
+	color: #CDD2D4 !important;
+	font-size: 24px;
+}
+
+a:hover{
+	color: white;
+}
+
+

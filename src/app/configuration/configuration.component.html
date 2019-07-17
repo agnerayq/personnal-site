@@ -1,3 +1,29 @@
-<p>
-  configuration works!
-</p>
+<form (ngSubmit)="submit()" [formGroup]="articleForm">
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input formControlName="title">
+	</div>
+	<div class="form-group">
+		<label for="article">Article</label>
+		<textarea formControlName="article" row="3"></textarea>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" type="submit">Add</button>
+	</div>
+</form>
+
+<table class="table table-scriped">
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col">Article</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let article of articleTable; let id=index">
+			<td>{{article.title}}</td>
+			<td>{{article.article}}</td>
+			<td><button type="button" class="btn btn-danger">remove</button></td>
+		</tr>
+	</tbody>
+</table>

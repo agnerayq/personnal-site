@@ -10,5 +10,5 @@ export const ROUTES:Routes = [
 	{path:"about",component:AboutComponent},
 	{path:"home",component:HomeComponent},
 	{path:"login",component:LoginformComponent},
-	{path:"configuration",component:ConfigurationComponent]}
+	{path:"configuration",component:ConfigurationComponent}
 ];

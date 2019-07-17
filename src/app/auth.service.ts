@@ -4,23 +4,24 @@ import {Router} from '@angular/router';
 @Injectable()
 export class AuthService {
 
-  constructor(private myRoute: Router) { }
+	constructor(private router: Router) { }
 
-	sendToken(token: string) {
-		localStorage.setItem("LoggedInUser",token)
+	setSecureToken(secure_token: string) {
+		localStorage.setItem("LoggedIn",secure_token)
 	}
 
-	getToken(){
-		return localStorage.getItem("LoggedInUser")
+
+	getSecureToken(){
+		return localStorage.getItem("LoggedIn")
 	}
 
-	isLoggedIn(){
-		return this.getToken() !=null;
+	isLoggednIn(){
+		return this.getSecureToken() !==null;
 	}
 
 	logout(){
-		localStorage.removeItem("LoggedInUser");
-		this.myRoute.navigate(["login"]);
+		localStorage.removeItem("LoggedIn");
+		this.router.navigate(["login"]);
 	}
 
 }

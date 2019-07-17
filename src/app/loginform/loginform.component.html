@@ -1,5 +1,13 @@
 <form (ngSubmit)="submit()" [formGroup]="loginForm">
-	<input formControlName="login">
-	<input type="password" formControlName="password">
-	<button type="submit" >Envoyer</button>
+	<div class="form-group">
+		<label for="login">Login</label>
+		<input type="text" formControlName="login">
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" formControlName="password"><br><br>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" type="submit">Register</button>
+	</div>
 </form>
