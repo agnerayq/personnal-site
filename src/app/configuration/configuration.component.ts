@@ -31,6 +31,11 @@ export class ConfigurationComponent implements OnInit {
 		this.articleTable.push({ title: this.articleForm.value.title, article: this.articleForm.value.article});
 	}
 
+	remove(index:number){
+		console.log("suppression de l'article");
+		this.articleTable.splice(index,1);
+	}
+
 
 	ngOnInit() {
 	}
