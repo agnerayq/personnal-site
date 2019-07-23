@@ -14,6 +14,9 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth.guard';
+import {ArticleService} from './article.service';
+import {HttpClientModule} from '@angular/common/http';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,12 @@ import {AuthGuard} from './auth.guard';
     AboutComponent,
     LoginformComponent,
     ConfigurationComponent,
+    ArticleListComponent,
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(ROUTES), ReactiveFormsModule
+    BrowserModule, RouterModule.forRoot(ROUTES), ReactiveFormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

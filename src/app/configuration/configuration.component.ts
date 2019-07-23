@@ -30,7 +30,7 @@ export class ConfigurationComponent implements OnInit {
 		/* ajout des vqleurs de mon formulaire dans un tableau => articleTable */
 		this.articleTable.push({ title: this.articleForm.value.title, article: this.articleForm.value.article});
 	}
-
+/* pour supprimer l'article de mon tableau d'article en passant l'index de l'article a supprimer =>  voir boucle ngFor dans le template */
 	remove(index:number){
 		console.log("suppression de l'article");
 		this.articleTable.splice(index,1);
